@@ -1,0 +1,356 @@
+*{
+    background: #F3F5FC;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 150%;
+}
+.encabezado{
+    display: flex;
+    position: relative;
+    width: 1440px;
+}
+h1{
+    display: inline-block;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 50px;
+    font-weight: bold;
+    color: #0A3871;
+}
+.principal{
+    display: flex;
+    position: relative;
+    width: 944px;
+    height: 700px;
+    top: 20px;
+}
+.TextoEncriptar{
+    position: absolute;
+    width: 680px;
+    height: 600px;
+    left: 240px;
+    top: 60px;
+}
+.textArea{
+    border: none;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 150%;
+    width: 95%;
+    height: 90%;
+    color: #0A3871;
+    text-transform: lowercase;
+}
+::placeholder{
+    color: #0A3871;
+}
+.textArea:focus{
+    outline: none;
+}
+.encriptador{
+    display: flex;
+    position: absolute;
+    width: 400px;
+    height: 800px;
+    top: 170px;
+    left: 1100px;
+}
+.TextoEncriptado{
+    background: white;
+    border: none;
+    border-radius: 32px;
+    color: #0A3871;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    box-shadow: 0 24px 32px -8px rgba(0, 0, 0, 0.88);
+}
+.Mensaje{
+    position: absolute;
+    background: none;
+    border: none;
+    width: 85%;
+    height: 83%;
+    margin: 32px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+}
+.Mensaje:focus{
+    outline: none;
+}
+.imgFondo{
+    display: flex;
+    background: none;
+    position: absolute;
+    width: 336px;
+    height: 304px;
+    top: 150px;
+}
+.fondo{
+    background: none;
+    width: 100%;
+}
+.notaInformativa{
+    display: inline-block;
+    flex-direction: row;
+    gap: 8px;
+    position: absolute;
+    align-items: center;
+    width: 250px;
+    height: 18px;
+    left: 240px;
+    top: 650px;
+}
+.Informacion{
+    width: 100%;
+    color: #495057;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    opacity: 0.8;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+.exclamacion{
+    width: 16px;
+    height: 16px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+.Botones{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 24px;
+    position: absolute;
+    width: 680px;
+    height: 67px;
+    left: 240px;
+    top: 705px;
+}
+.btnEncriptar{
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    background:#0A3871;
+    border: 1px solid #0A3871;
+    border-radius: 24px;
+    color: white;
+    cursor: pointer;
+    width: 50%;
+}
+.btnDesencriptar{
+    background: #D8DFE8;
+    border: 1px solid #0A3871;
+    border-radius: 24px;
+    color: #0A3871;
+    cursor: pointer;
+    width: 50%;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+.Contenido{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: none;
+    position: absolute;
+    width: 336px;
+    height: 122px;
+    left: 25px;
+    top: 450px;
+}
+.content1{
+    background: none;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 120%;
+    width: 336px;
+    height: 58px;
+    text-align: center;
+    color: #343A40;
+    align-self: stretch;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+.content2{
+    width: 336px;
+    height: 48px;
+    background: none;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #495057;
+    text-align: center;
+    align-self: stretch;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+.BotonCopiar{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 8px;
+    position: absolute;
+    width: 336px;
+    height: 67px;
+    left: 25px;
+    top: 705px;
+    background: none;
+}
+.btnCopiar{
+    width: 100%;
+    border: 1px solid #0A3871;
+    background-color: #D8DFE8;
+    color: #0A3871;
+    border-radius: 24px;
+    cursor: pointer;
+    visibility: hidden;
+}
+@media (max-width: 767px) {
+
+    .principal,.encriptador,.encabezado, .TextoEncriptar, .notaInformativa{
+        width: 96%;
+    }
+    h1{
+        font-size: 20px;
+    }
+    .logo{
+        width: 20%;
+    }
+    .TextoEncriptar, .notaInformativa{
+        left: 10px;
+    }
+    .TextoEncriptar{
+        top: 30px;
+        height: 30%;
+    }
+    .textArea{
+        font-size: 18px;
+    }
+    .notaInformativa{
+        top: 330px;
+    }
+    .Botones{
+        width: 80%;
+        left: 5px;
+        top: 380px;
+        padding: 20px;
+    }
+    .btnEncriptar, .btnDesencriptar, .btnCopiar{
+        font-size: 18px;
+    }
+    .encriptador{
+        left: 10px;
+        top: 530px;
+        height: 300px;
+    }
+    .TextoEncriptado{
+        width: 96%;
+        height: 95%;
+        margin-bottom: 10px;
+    }
+    .Mensaje{
+        height: 60%;
+        width: 80%;
+        font-size: 18px;
+    }
+    .Contenido{
+        left: 15px;
+        top: 5px;
+        width: 90%;
+    }
+    .content1{
+        width: 100%;
+        font-size: 18px;
+        margin: 10px 0 0 0;
+    }
+    .content2{
+        width: 100%;
+        margin: 0;
+        font-size: 12px;
+    }
+    .BotonCopiar{
+        left: 10px;
+        top: 220px;
+        width: 90%;
+    }
+    .imgFondo{
+        visibility: hidden;
+        top: 1px;
+    } 
+}
+@media (min-width: 768px) and (max-width:990px) {
+    h1{
+        font-size: 30px;
+    }
+    .principal, .encriptador, .encabezado, .TextoEncriptar, .notaInformativa{
+        width: 95%;
+    }
+    .TextoEncriptar, .notaInformativa, .Botones{
+        left: 40px;
+    }
+    .TextoEncriptar{
+        top: 30px;
+        height: 50%;
+    }
+    .textArea{
+        font-size: 30px;
+    }
+    .notaInformativa{
+        top: 530px;
+    }
+    .Botones{
+        width: 80%;
+        top: 580px;
+    }
+    .encriptador{
+        height: 310px;
+        left: 60px;
+        top: 820px;
+    }
+    .TextoEncriptado{
+        width: 90%;
+        height: 100%;
+        margin-bottom: 10px;
+    }
+    .Mensaje{
+        height: 70%;
+        width: 90%;
+        font-size: 30px;
+    }
+    .Contenido{
+        width: 90%;
+        top: 100px;
+
+    }
+    .content1{
+        width: 100%;
+        font-size: 30px;
+        margin: 10px 0 0 0;
+    }
+    .content2{
+        width: 100%;
+        font-size: 20px;
+        margin: 0;
+    }
+    .BotonCopiar{
+        left: 10px;
+        top: 220px;
+        width: 90%;
+    }
+    .imgFondo{
+        visibility: hidden;
+        top: 1px;
+    }
+}
