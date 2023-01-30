@@ -6,9 +6,11 @@
     line-height: 150%;
 }
 .encabezado{
+    top: 15px;
     display: flex;
     position: relative;
     width: 1440px;
+    font-family: 'Inter';
 }
 h1{
     display: inline-block;
@@ -87,6 +89,7 @@ h1{
     width: 336px;
     height: 304px;
     top: 150px;
+    left: 30px;
 }
 .fondo{
     background: none;
@@ -163,7 +166,7 @@ h1{
     position: absolute;
     width: 336px;
     height: 122px;
-    left: 25px;
+    left: 30px;
     top: 450px;
 }
 .content1{
