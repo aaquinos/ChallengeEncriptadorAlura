@@ -3,6 +3,10 @@ const mensaje = document.querySelector(".Mensaje");
 const fondo = document.querySelector(".fondo");
 const contenido = document.querySelector(".Contenido");
 const btnCopiar = document.querySelector(".btnCopiar");
+let modalIndex = document.getElementById('modal');
+let closeModal = document.getElementById('close');
+let modalH2 = document.getElementById('modal-h2');
+let modalp = document.getElementById('modal-p');
 
 //La letra "e" es convertida para "enter"
 //La letra "i" es convertida para "imes"
@@ -11,21 +15,39 @@ const btnCopiar = document.querySelector(".btnCopiar");
 //La letra "u" es convertida para "ufat"
 
 function btnEncriptar(){
-    const textoEncriptado = encriptar(textArea.value);
+    const eliminarAcentos = (str)=>{
+        return str.normalize("NFD").replace(/[\u0300-\u036f]/g,"");
+    }
+    const textoEncriptado = encriptar(eliminarAcentos(textArea.value));
     mensaje.value = textoEncriptado;
     textArea.value = ""
     fondo.style.opacity = "0.15";
     contenido.style.visibility = "hidden";
     btnCopiar.style.visibility = "visible";
+    modalH2.innerHTML = "¡Texto encriptado exitósamente!";
+    modalp.innerHTML = "Su texto ha sido encriptado, para desencriptarlo puede copiar el texto encriptado con el botón 'Copiar' y luego pegarlo en el cuadro para desencriptar."
+    modalIndex.style.visibility = "visible";
+}
+closeModal.onclick = function(){
+    modalIndex.style.visibility = "hidden"
+}
+modalIndex.onclick = function(){
+    modalIndex.style.visibility = "hidden"
 }
 
 function btnDesencriptar(){
-    const txtDesencriptado = desencriptar(textArea.value);
+    const eliminarAcentos = (str)=>{
+        return str.normalize("NFD").replace(/[\u0300-\u036f]/g,"");
+    }
+    const txtDesencriptado = desencriptar(eliminarAcentos(textArea.value));
     mensaje.value = txtDesencriptado;
     textArea.value = ""
     fondo.style.opacity = "0.15";
     contenido.style.visibility = "hidden";
     btnCopiar.style.visibility = "visible";
+    modalH2.innerHTML = "¡Texto desencriptado exitósamente!";
+    modalp.innerHTML = "Su texto ha sido desencriptado. Gracias por utilizar nuestro servicio de encriptación y desencriptación"
+    modalIndex.style.visibility = "visible";
 }
 
 function copiarPortapapeles(){
